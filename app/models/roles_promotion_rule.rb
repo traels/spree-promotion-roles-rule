@@ -15,7 +15,7 @@ class RolesPromotionRule < Spree::PromotionRule
 
   def eligible?(order, options = {})
     roles.each do |r|
-      return true if order.user.has_spree_role?(r.name)
+      return true if order.user and order.user.has_spree_role?(r.name)
     end
     false
   end
