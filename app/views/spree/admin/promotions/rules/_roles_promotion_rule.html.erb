@@ -1,0 +1,6 @@
+<div class="field alpha omega eight columns">
+  <label><%= Spree.t('roles_promotion_rule.choose_roles') %></label><br>
+  <% Spree::Role.all.each do |r| %>
+    <input type='checkbox' name='<%= param_prefix %>[role_list]' id='role_list_<%= r.name %>' value='<%= r.id %>' checked="<%= 'checked' if promotion_rule.role_list.include?(r.id) %>" /> <%= r.name %>
+  <% end %>
+</div>
