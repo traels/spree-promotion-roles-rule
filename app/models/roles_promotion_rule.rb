@@ -29,7 +29,7 @@ class RolesPromotionRule < Spree::PromotionRule
 #  end
 
   def role_list
-    role_ids
+    self.role_ids
   end
   def role_list=(a)
     self.role_ids = a

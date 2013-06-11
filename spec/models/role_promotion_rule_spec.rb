@@ -8,6 +8,10 @@ describe "Admin role promotion" do
     @order = create(:order)
   end
 
+  it "is only eligible for 1 user" do
+    @rule.role_list.count.should == 1
+  end
+
   it "is eligible for admin user" do
     @order.user = create(:admin_user)
     @rule.eligible?(@order).should == true

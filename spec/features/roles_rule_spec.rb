@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "New promotions" do
   before :each do
-    create(:role)
+    @role = create(:role)
     @admin_role = create(:admin_role)
     sign_in_admin!(create(:admin_user))
     @promo = create(:promotion)
@@ -24,7 +24,16 @@ describe "New promotions" do
     rolerule.role_list = [@admin_role.id]
     @promo.promotion_rules = [rolerule]
     visit "/admin/promotions/1/edit"
-    my_box = find('#role_list_admins')
+    my_box = find("#role_list_#{@admin_role.id}")
     my_box.should be_checked
+  end
+
+  it "have nothing but admin role checked" do
+    rolerule = RolesPromotionRule.new
+    rolerule.role_list = [@admin_role.id]
+    @promo.promotion_rules = [rolerule]
+    visit "/admin/promotions/1/edit"
+    my_box = find("#role_list_#{@role.id}")
+    my_box.should_not be_checked
   end
 end
