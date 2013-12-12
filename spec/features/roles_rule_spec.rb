@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "New promotions" do
   before :each do
+    Rails.application.config.spree.promotions.rules << RolesPromotionRule
     @role = create(:role)
     @admin_role = create(:admin_role)
     sign_in_admin!(create(:admin_user))
