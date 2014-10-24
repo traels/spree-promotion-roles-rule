@@ -9,7 +9,7 @@ Installation
 Add spree_promotion_roles_rule to your Gemfile:
 
 ```ruby
-gem 'spree_promotion_roles_rule', github: 'traels/spree-promotion-roles-rule'
+gem 'spree_promotion_roles_rule', github: 'traels/spree-promotion-roles-rule', branch: '2-2-stable'
 ```
 
 Add rule to config/initializers/spree.rb
@@ -24,4 +24,4 @@ bundle
 bundle exec rails g spree_promotion_roles_rule:install
 ```
 
-Copyright (c) 2013 Træls, released under the New BSD License
+Copyright (c) 2014 Træls, released under the New BSD License
