@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_promotion_roles_rule'
-  s.version     = '2.3.0'
+  s.version     = '2.3.1'
   s.summary     = 'Promotion rule for user roles'
   s.description = 'Enables promotions to be eligible for users of a specific role.'
   s.required_ruby_version = '>= 1.9.3'
