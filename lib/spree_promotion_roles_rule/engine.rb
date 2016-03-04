@@ -4,7 +4,9 @@ module SpreePromotionRolesRule
     isolate_namespace Spree
     engine_name 'spree_promotion_roles_rule'
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    initializer 'spree.register.rules' do |app|
+      app.config.spree.promotions.rules << RolesPromotionRule
+    end
 
     # use rspec for tests
     config.generators do |g|
